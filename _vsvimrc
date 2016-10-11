@@ -1,0 +1,82 @@
+set vsvim_useeditordefaults
+set vsvim_useeditorindent
+
+
+" vim 自身（非插件）快捷键
+
+
+" 定义快捷键的前缀，即 <Leader>
+let mapleader=";"
+
+" 定义快捷键到行首和行尾
+nmap ms ^
+nmap me $
+
+" C语言在行末加 ; 
+imap <A-;> <ESC>$a;
+
+" Insert模式移动光标
+imap <A-h> <Left>
+imap <A-j> <Down>
+imap <A-k> <Up>
+imap <A-l> <Right>
+
+
+"Visual模式缩进
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
+
+"使粘贴时缩进正确
+nnoremap p pv`.=
+
+
+" 设置快捷键将选中文本块复制至系统剪贴板
+vnoremap <Leader>y "+y
+" 设置快捷键将系统剪贴板内容粘贴至vim
+nmap <Leader>p "+p
+
+" 定义快捷键关闭当前分割窗口
+nmap <Leader>q :q<CR>
+" 定义快捷键保存当前窗口内容
+nmap <Leader>w :w<CR>
+" 定义快捷键保存所有窗口内容并退出 vim
+nmap <Leader>WQ :wa<CR>:q<CR>
+" 不做任何保存，直接退出 vim
+nmap <Leader>Q :qa!<CR>
+
+" 设置快捷键遍历子窗口
+" 依次遍历
+" nnoremap wn <C-W><C-W>
+" 跳转至右方的窗口
+nnoremap <Leader>wl <C-W>l
+" 跳转至方的窗口
+nnoremap <Leader>wh <C-W>h
+" 跳转至上方的子窗口
+nnoremap <Leader>wk <C-W>k
+" 跳转至下方的子窗口
+nnoremap <Leader>wj <C-W>j
+
+" 定义快捷键在结对符之间跳转，助记 pair
+nmap <Leader>pa %
+
+" 跳到指定行
+nmap <Leader>g G
+
+" VSC
+nnoremap <C-O> :vsc View.NavigateBackward<CR>
+nnoremap <C-I> :vsc View.NavigateForward<CR>
+nnoremap <Leader>mp :vsc Window.MovetoPreviousTabGroup<CR>
+nnoremap <Leader>mn :vsc Window.MovetoNextTabGroup<CR>
+
+
+" 开启实时搜索功能
+set incsearch
+
+" 搜索时大小写不敏感
+set ignorecase
+
+
+
+
+
+
